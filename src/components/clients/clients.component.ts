@@ -26,19 +26,6 @@ export class Clients {
   constructor(private ngRedux: NgRedux<IAppState>,
               private _clientActions: ClientActions) {}
 
-  private onAddItem(client) {
-    console.log(client);
-    this.ngRedux.dispatch({ type: 'CLIENT_ADDED', payload: { 'id' : client.id, 'company' : client.company } });
-  }
-
-  private onRemoveItem(index: number) {
-    if (index == null) {
-      return;
-    }
-
-    this.ngRedux.dispatch({ type: 'CLIENT_DELETED', payload: { index }});
-  }
-
   @Output() clientAdded: EventEmitter<any> = new EventEmitter();
 
 };

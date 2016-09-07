@@ -5,6 +5,8 @@
       <tr>
         <th>ID</th>
         <th>Company Name</th>
+        <th>Email</th>
+        <th>Active</th>
         <th>Actions</th>
       </tr>
       </thead>
@@ -12,7 +14,9 @@
       <tr *ngFor="let client of (clients$ | async); let index = index">
         <td>{{ client.id }}</td>
         <td>{{ client.company }}</td>
-        <td><button type="button btn-default" (click)="_clientActions.removeClient(client.id)">Remove</button></td>
+        <td>{{ client.email }}</td>
+        <td>{{ client.active }}</td>
+        <td><button type="button btn-secondary btn-sm" (click)="_clientActions.removeClient(client.id)">Remove</button></td>
       </tr>
       </tbody>
     </table>
@@ -25,11 +29,11 @@
       </div>
       <div class="form-group">
         <label for="email">Email address</label>
-        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+        <input type="email" class="form-control" name="email" id="email" placeholder="Email" ngControl ngModel>
       </div>
       <div class="checkbox">
         <label>
-          <input type="checkbox" name="active"> Check me out
+          <input type="checkbox" name="active" ngControl ngModel> Check me out
         </label>
       </div>
       <button type="submit" class="btn btn-default" (click)="_clientActions.addClient(client.value)">Submit</button>
