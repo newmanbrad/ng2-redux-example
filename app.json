@@ -1,0 +1,10 @@
+{
+  "name":"getting_started_ng2_redux",
+  "scripts":{},
+  "env":{
+    "NPM_CONFIG_PRODUCTION" : {
+      "value":"false"
+    }
+  },
+  "addons":[]
+}
