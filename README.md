@@ -13,5 +13,5 @@ Includes:
 ## Installation
 
 ```sh
-npm install npm run dev
+npm install npm run start
 ```

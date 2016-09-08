@@ -11,9 +11,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li router-active><a [routerLink]=" ['/'] ">Home</a></li>
-                <li router-active><a [routerLink]=" ['/clients'] ">Clients</a></li>
-                <li router-active><a [routerLink]=" ['/consultants'] ">Consultants</a></li>
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{ name: '/', exact: true }"><a [routerLink]=" ['/'] ">Home</a></li>
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{ name: '/clients', exact: true }"><a [routerLink]=" ['/clients'] ">Clients</a></li>
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{ name: '/consultants', exact: true }"><a [routerLink]=" ['/consultants'] " routerLinkActive="active">Consultants</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->

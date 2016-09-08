@@ -15,8 +15,6 @@ import { Clients, Header  } from '../components';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 // bootstrap stuff
-// import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
-
 import { AlertModule, DatepickerModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 // Pages
@@ -27,6 +25,7 @@ import {
 
 // services
 import { ClientService } from '../services/client';
+
 
 @NgModule({
   imports: [
