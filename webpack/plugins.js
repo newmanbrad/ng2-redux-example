@@ -7,6 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SplitByPathPlugin = require('webpack-split-by-path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+
 const sourceMap = process.env.TEST
   ? [new webpack.SourceMapDevToolPlugin({ filename: null, test: /\.ts$/ })]
   : [ ];
@@ -38,6 +39,7 @@ const devPlugins = [
   //   files: 'src/**/*.css',
   //   failOnError: false,
   // }),
+  new webpack.HotModuleReplacementPlugin(),
   new webpack.ProvidePlugin({
     jQuery: 'jquery',
     $: 'jquery',

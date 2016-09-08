@@ -16,7 +16,7 @@ const TEMPLATE = require('./app.template.html');
 @Component({
   selector: 'app',
   template: TEMPLATE,
-  styles: [ require('../styles/index.less').toString() ],
+  styles: [ require('../styles/index.css').toString(), require('../styles/index.less').toString() ]
 })
 export class App {
   constructor(private _ngRedux: NgRedux<IAppState>,

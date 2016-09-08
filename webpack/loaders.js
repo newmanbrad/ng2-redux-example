@@ -27,6 +27,12 @@ exports.html = {
   exclude: /node_modules/,
 };
 
+exports.css = {
+  test: /\.css$/,
+  exclude: /node_modules/,
+  loader: 'style-loader!css-loader'
+};
+
 exports.less = {
   test: /\.less$/,
   exclude: /node_modules/,

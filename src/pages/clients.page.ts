@@ -4,6 +4,6 @@ const TEMPLATE = require('./clients.template.html');
 @Component({
   selector: 'clients-page',
   template: TEMPLATE,
-  styles: [ require('../styles/index.less') ]
+  styles: [ require('../styles/index.less').toString() ]
 })
 export class ClientsPage { };

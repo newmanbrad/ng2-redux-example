@@ -18,7 +18,7 @@ const TEMPLATE = require('./clients.component.html');
   template: TEMPLATE,
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [ ClientActions ],
-  styles: [ require('../../styles/index.less') ]
+  styles: [ require('../../styles/index.less').toString() ]
 })
 export class Clients {
   @select() clients$: Observable<IClients>;
