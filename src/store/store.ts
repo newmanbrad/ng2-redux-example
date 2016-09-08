@@ -7,7 +7,7 @@ import * as clients from './clients';
 
 export interface IAppState {
   clients?: clients.IClients;
-};
+}
 
 export const rootReducer = combineReducers<IAppState>({
   clients: clients.clientReducer

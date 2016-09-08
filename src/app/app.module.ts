@@ -11,7 +11,7 @@ import {
   appRoutingProviders
 } from './app.routing';
 import { App } from './app';
-import { Clients  } from '../components';
+import { Clients, Header  } from '../components';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 // bootstrap stuff
@@ -41,7 +41,8 @@ import { ClientService } from '../services/client';
   declarations: [
     App,
     ClientsPage,
-    Clients
+    Clients,
+    Header
   ],
   bootstrap: [
     App

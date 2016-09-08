@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Clients } from '../components';
+// import { Clients } from '../components';
 
 const TEMPLATE = require('./clients.template.html');
 @Component({
