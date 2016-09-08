@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-// import { Clients } from '../components';
 
 const TEMPLATE = require('./clients.template.html');
 @Component({
@@ -7,6 +6,4 @@ const TEMPLATE = require('./clients.template.html');
   template: TEMPLATE,
   styles: [ require('../styles/index.less') ]
 })
-export class ClientsPage {
-
-};
+export class ClientsPage { };

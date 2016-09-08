@@ -21,12 +21,12 @@ import { AlertModule, DatepickerModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 // Pages
 import {
-  ClientsPage
+  ClientsPage,
+  HomePage
 } from '../pages';
 
 // services
 import { ClientService } from '../services/client';
-
 
 @NgModule({
   imports: [
@@ -40,7 +40,10 @@ import { ClientService } from '../services/client';
   ],
   declarations: [
     App,
+    // pages
     ClientsPage,
+    HomePage,
+    // components
     Clients,
     Header
   ],
