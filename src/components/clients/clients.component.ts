@@ -9,6 +9,7 @@ import { NgRedux, select } from 'ng2-redux';
 import { ClientActions } from '../../actions';
 import { reimmutify } from '../../store';
 
+
 import { Observable } from 'rxjs';
 import { IAppState, IClients } from '../../store';
 
@@ -26,6 +27,12 @@ export class Clients {
   constructor(private ngRedux: NgRedux<IAppState>,
               private _clientActions: ClientActions) {}
 
+  submitted = false;
+  onSubmit() { this.submitted = true; }
+
   @Output() clientAdded: EventEmitter<any> = new EventEmitter();
+  // @Input() formModel: NgFormModel;
+
+  @Output() submit = new EventEmitter<Event>();
 
 };

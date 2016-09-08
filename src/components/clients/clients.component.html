@@ -17,7 +17,10 @@
           <td>{{ client.company }}</td>
           <td>{{ client.email }}</td>
           <td>{{ client.active }}</td>
-          <td><button type="button btn-secondary btn-sm" (click)="_clientActions.removeClient(client.id)">Remove</button></td>
+          <td>
+            <button type="button btn btn-raised btn-xs btn-secondary" (click)="_clientActions.selectClient(client.id)">Edit</button>
+            <button type="button btn btn-raised btn-xs btn-danger" (click)="_clientActions.removeClient(client.id)">Remove</button>
+          </td>
         </tr>
         </tbody>
       </table>
@@ -25,12 +28,12 @@
   </div>
   <div class="col-md-4 col-sm-4">
     <div class="well bs-component">
-      <form ngForm #client="ngForm">
+      <form ngForm #client="ngForm" (ngSubmit)="submit.emit($event)">
         <div class="form-group">
-          <input type="input" class="form-control" name="company" id="companyName" placeholder="Company Name" ngControl ngModel>
+          <input type="input" class="form-control" name="company" id="companyName" placeholder="Company Name" ngControl ngModel required>
         </div>
         <div class="form-group">
-          <input type="email" class="form-control" name="email" id="email" placeholder="Email" ngControl ngModel>
+          <input type="email" class="form-control" name="email" id="email" placeholder="Email" ngControl ngModel required>
         </div>
         <div class="form-group">
           <div class="col-md-offset-2 col-md-10">
@@ -46,4 +49,3 @@
     </div>
   </div>
 </div>
-

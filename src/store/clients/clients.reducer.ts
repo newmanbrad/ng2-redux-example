@@ -3,8 +3,8 @@ import { IClients, IClient, ClientRecord } from './clients.types';
 import { INITIAL_STATE } from './clients.initial-state';
 
 import {
-  CLIENT_ADDED,
-  CLIENT_DELETED,
+    CLIENT_ADDED,
+    CLIENT_DELETED, SELECT_CLIENT,
 } from '../../constants';
 
 export function clientReducer(state: IClients = INITIAL_STATE, action): IClients {
@@ -18,6 +18,8 @@ export function clientReducer(state: IClients = INITIAL_STATE, action): IClients
     case CLIENT_DELETED:
       console.log(action.payload.id);
       return state.filter(n => n.id !== action.payload.id) as IClients;
+    case SELECT_CLIENT:
+      return state.filter(n => n.id === action.payload.id) as IClients;
     default:
       return state;
   }

@@ -11,11 +11,14 @@ import {
   appRoutingProviders
 } from './app.routing';
 import { App } from './app';
-import { Clients, Header  } from '../components';
+import { Clients, Header } from '../components';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 // bootstrap stuff
 import { AlertModule, DatepickerModule } from 'ng2-bootstrap/ng2-bootstrap';
+
+// modules
+import { ModalModule } from '../components/modal/modal.module';
 
 // Pages
 import {
@@ -35,7 +38,8 @@ import { ClientService } from '../services/client';
     ReactiveFormsModule,
     FormsModule,
     AlertModule,
-    DatepickerModule
+    DatepickerModule,
+    ModalModule
   ],
   declarations: [
     App,

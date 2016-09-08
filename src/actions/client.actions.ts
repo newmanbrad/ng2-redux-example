@@ -1,7 +1,9 @@
 import {
   CLIENT_ADDED,
   CLIENT_DELETED,
-  CLIENT_UPDATED
+  CLIENT_UPDATED,
+  SELECT_CLIENT,
+  UNSELECT_CLIENT
 } from '../constants';
 
 import { Injectable } from '@angular/core';
@@ -16,6 +18,8 @@ constructor(
   private _client: ClientService) {}
 
   addClient = (client) => {
+    if ( client.company === null || client.company === '' ) { return null; }
+    if ( client.email === null || client.email === '' ) { return null; }
     console.info('Adding client info:', client);
     return this._client.getNextClientId().then(clientId => {
       return this._ngRedux.dispatch({
@@ -33,6 +37,13 @@ constructor(
   removeClient = (clientId: number) => {
     return this._ngRedux.dispatch({
       type: CLIENT_DELETED,
+      payload: { id: clientId }
+    });
+  }
+
+  selectClient = (clientId: number) => {
+    return this._ngRedux.dispatch({
+      type: SELECT_CLIENT,
       payload: { id: clientId }
     });
   }
