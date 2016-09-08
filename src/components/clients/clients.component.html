@@ -28,7 +28,7 @@
   </div>
   <div class="col-md-4 col-sm-4">
     <div class="well bs-component">
-      <form ngForm #client="ngForm" (ngSubmit)="submit.emit($event)">
+      <form ngForm #client="ngForm" (ngSubmit)="onSubmit(client.value)" >
         <div class="form-group">
           <input type="input" class="form-control" name="company" id="companyName" placeholder="Company Name" ngControl ngModel required>
         </div>
@@ -44,7 +44,7 @@
             </div>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary" (click)="_clientActions.addClient(client.value)">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
   </div>

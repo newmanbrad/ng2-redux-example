@@ -27,12 +27,13 @@ export class Clients {
   constructor(private ngRedux: NgRedux<IAppState>,
               private _clientActions: ClientActions) {}
 
+  // form handler
   submitted = false;
-  onSubmit() { this.submitted = true; }
-
-  @Output() clientAdded: EventEmitter<any> = new EventEmitter();
-  // @Input() formModel: NgFormModel;
-
-  @Output() submit = new EventEmitter<Event>();
+  onSubmit(client) {
+    if ( client.company === null || client.company === '' ) { return null; }
+    if ( client.email === null || client.email === '' ) { return null; }
+    this.submitted = true;
+    this._clientActions.addClient(client);
+  }
 
 };

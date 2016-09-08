@@ -18,8 +18,6 @@ constructor(
   private _client: ClientService) {}
 
   addClient = (client) => {
-    if ( client.company === null || client.company === '' ) { return null; }
-    if ( client.email === null || client.email === '' ) { return null; }
     console.info('Adding client info:', client);
     return this._client.getNextClientId().then(clientId => {
       return this._ngRedux.dispatch({
