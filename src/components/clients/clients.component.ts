@@ -32,6 +32,8 @@ export class Clients {
    * @select() provides access to the data store.
    ***/
 
+  formTitle = 'Add';
+
   @select() clients$: Observable<IClients>;
   // forms items
   clientForm: FormGroup;
@@ -62,19 +64,21 @@ export class Clients {
 
   onSubmit() {
     this.determineAddEdit(this.clientForm.value.id, this.clientForm.value);
-    this.clientForm.reset();
+    this.clearForm();
   }
 
   selectClient(client) {
+    this.formTitle = 'Edit';
     this.clientForm.patchValue({
       id: client.id,
       company: client.company,
       email: client.email,
-      active: client.email
+      active: client.active
     });
   }
 
   clearForm() {
+    this.formTitle = 'Add';
     this.clientForm.reset();
   }
 

@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-md-4 col-sm-4">
     <div class="well bs-component">
+      <legend>{{ formTitle}} Client</legend>
       <!--- model driven form --->
       <form [formGroup]="clientForm" (ngSubmit)="onSubmit(clientForm)" >
         <input type="hidden" name="id" formControlName="id">
