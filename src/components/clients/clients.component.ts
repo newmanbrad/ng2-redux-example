@@ -37,7 +37,7 @@ export class Clients {
   clientForm: FormGroup;
   company = new FormControl('', Validators.required);
   email = new FormControl('', Validators.required);
-  active = new FormControl('');
+  active = new FormControl('false');
 
   constructor(private ngRedux: NgRedux<IAppState>,
               private _clientActions: ClientActions,
