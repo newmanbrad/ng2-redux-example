@@ -1,4 +1,4 @@
-import { List, Record, fromJS } from 'immutable';
+// import { List, Record, fromJS, Map } from 'immutable';
 import { IClients, IClient, ClientRecord } from './clients.types';
 import { INITIAL_STATE } from './clients.initial-state';
 
@@ -20,8 +20,11 @@ export function clientReducer(state: IClients = INITIAL_STATE, action): IClients
       console.log(action.payload.id);
       return state.filter(n => n.id !== action.payload.id) as IClients;
     case UPDATE_CLIENT:
-      // return state.map(client => { return client.id === action.payload.id ? Object.assign({}, client, action.payload) : client; });
-      return state;
+      return state.map(client =>
+          client.id === action.payload.id ?
+              Object.assign({}, client, action.payload) :
+              client
+      ) as IClients;
     default:
       return state;
   }
