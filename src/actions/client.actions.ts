@@ -1,9 +1,8 @@
 import {
-  CLIENT_ADDED,
-  CLIENT_DELETED,
-  CLIENT_UPDATED,
-  SELECT_CLIENT,
-  UNSELECT_CLIENT
+    CLIENT_ADDED,
+    CLIENT_DELETED,
+    CLIENT_UPDATED,
+    UPDATE_CLIENT
 } from '../constants';
 
 import { Injectable } from '@angular/core';
@@ -37,12 +36,17 @@ constructor(
       type: CLIENT_DELETED,
       payload: { id: clientId }
     });
-  }
+  };
 
-  selectClient = (clientId: number) => {
+  updateClient = (client) => {
     return this._ngRedux.dispatch({
-      type: SELECT_CLIENT,
-      payload: { id: clientId }
+      type: UPDATE_CLIENT,
+      payload: {
+        id: client.id,
+        company: client.company,
+        email: client.email,
+        active: client.active
+      }
     });
   }
 

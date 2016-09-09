@@ -1,7 +1,7 @@
 // Client
 export const CLIENT_ADDED = 'CLIENT_ADDED';
 export const CLIENT_DELETED = 'CLIENT_DELETED';
+export const UPDATE_CLIENT = 'UPDATE_CLIENT';
 export const CLIENT_UPDATED = 'CLIENT_UPDATED';
-export const SELECT_CLIENT = 'SELECT_CLIENT';
-export const UNSELECT_CLIENT = 'UNSELECT_CLIENT';
+
 

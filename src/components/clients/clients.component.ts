@@ -11,7 +11,7 @@ import {
     FormBuilder
 } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { IAppState, IClients } from '../../store';
+import { IAppState, IClients, IClient } from '../../store';
 
 // decorator constants
 const TEMPLATE = require('./clients.component.html');
@@ -35,6 +35,7 @@ export class Clients {
   @select() clients$: Observable<IClients>;
   // forms items
   clientForm: FormGroup;
+  id = new FormControl('');
   company = new FormControl('', Validators.required);
   email = new FormControl('', Validators.required);
   active = new FormControl('false');
@@ -44,14 +45,37 @@ export class Clients {
               fb: FormBuilder) {
 
     this.clientForm = fb.group({
+      id: this.id,
       company: this.company,
       email: this.email,
       active: this.active
     });
   }
 
+  determineAddEdit(idValue, formValues) {
+    if (idValue) {
+      this._clientActions.updateClient(formValues);
+    } else {
+      this._clientActions.addClient(formValues);
+    }
+  }
+
   onSubmit() {
-    this._clientActions.addClient(this.clientForm.value);
+    this.determineAddEdit(this.clientForm.value.id, this.clientForm.value);
+    this.clientForm.reset();
+  }
+
+  selectClient(client) {
+    this.clientForm.patchValue({
+      id: client.id,
+      company: client.company,
+      email: client.email,
+      active: client.email
+    });
+  }
+
+  clearForm() {
+    this.clientForm.reset();
   }
 
 }
