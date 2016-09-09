@@ -17,7 +17,6 @@ export function clientReducer(state: IClients = INITIAL_STATE, action): IClients
     case CLIENT_ADDED:
       return state.push(action.payload);
     case CLIENT_DELETED:
-      console.log(action.payload.id);
       return state.filter(n => n.id !== action.payload.id) as IClients;
     case UPDATE_CLIENT:
       return state.map(client =>
