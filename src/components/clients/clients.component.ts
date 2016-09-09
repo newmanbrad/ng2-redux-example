@@ -1,18 +1,19 @@
 import {
   Component,
-  Input,
-  Output,
-  ChangeDetectionStrategy,
-  EventEmitter
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { NgRedux, select } from 'ng2-redux';
 import { ClientActions } from '../../actions';
-import { reimmutify } from '../../store';
-
-
+import {
+    FormGroup,
+    FormControl,
+    Validators,
+    FormBuilder
+} from '@angular/forms';
 import { Observable } from 'rxjs';
 import { IAppState, IClients } from '../../store';
 
+// decorator constants
 const TEMPLATE = require('./clients.component.html');
 @Component({
   selector: 'client-component',
@@ -22,18 +23,35 @@ const TEMPLATE = require('./clients.component.html');
   styles: [ require('../../styles/index.less').toString() ]
 })
 export class Clients {
+
+  /***
+   * Build using reactive form directives. Don't use template driven forms as they
+   * enable bi-directional data binding which can lead to mutability.
+   * Do not mix ngModel with reactive forms!
+   *
+   * @select() provides access to the data store.
+   ***/
+
   @select() clients$: Observable<IClients>;
+  // forms items
+  clientForm: FormGroup;
+  company = new FormControl('', Validators.required);
+  email = new FormControl('', Validators.required);
+  active = new FormControl('');
 
   constructor(private ngRedux: NgRedux<IAppState>,
-              private _clientActions: ClientActions) {}
+              private _clientActions: ClientActions,
+              fb: FormBuilder) {
 
-  // form handler
-  submitted = false;
-  onSubmit(client) {
-    if ( client.company === null || client.company === '' ) { return null; }
-    if ( client.email === null || client.email === '' ) { return null; }
-    this.submitted = true;
-    this._clientActions.addClient(client);
+    this.clientForm = fb.group({
+      company: this.company,
+      email: this.email,
+      active: this.active
+    });
   }
 
-};
+  onSubmit() {
+    this._clientActions.addClient(this.clientForm.value);
+  }
+
+}

@@ -16,6 +16,8 @@ Includes:
 npm install npm run start
 ```
 
+Install Redux Devtools from Chrome. Can be found here: https://chrome.google.com/webstore/detail/redux-devtools/
+
 ## CSS / Less
 
 Currently, css loader is being used to bring plain css for Bootstrap and Bootstrap Material Design to enhance load time. 

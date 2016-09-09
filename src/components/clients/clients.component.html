@@ -28,23 +28,24 @@
   </div>
   <div class="col-md-4 col-sm-4">
     <div class="well bs-component">
-      <form ngForm #client="ngForm" (ngSubmit)="onSubmit(client.value)" >
+      <!--- model driven form --->
+      <form [formGroup]="clientForm" (ngSubmit)="onSubmit(clientForm)" >
         <div class="form-group">
-          <input type="input" class="form-control" name="company" id="companyName" placeholder="Company Name" ngControl ngModel required>
+          <input type="input" class="form-control" name="company" id="companyName" placeholder="Company Name" formControlName="company">
         </div>
         <div class="form-group">
-          <input type="email" class="form-control" name="email" id="email" placeholder="Email" ngControl ngModel required>
+          <input type="email" class="form-control" name="email" id="email" placeholder="Email" formControlName="email">
         </div>
         <div class="form-group">
           <div class="col-md-offset-2 col-md-10">
             <div class="togglebutton">
               <label>
-                <input type="checkbox" name="active" ngControl ngModel><span class="toggle"></span> Active
+                <input type="checkbox" name="active" formControlName="active"><span class="toggle"></span> Active
               </label>
             </div>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!clientForm.valid">Submit</button>
       </form>
     </div>
   </div>
