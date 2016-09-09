@@ -77,6 +77,11 @@ export class Clients {
     });
   }
 
+  removeClient(id) {
+    this._clientActions.removeClient(id);
+    this.clearForm();
+  }
+
   clearForm() {
     this.formTitle = 'Add';
     this.clientForm.reset();

@@ -45,7 +45,7 @@
           <td>{{ client.active }}</td>
           <td>
             <button type="button btn btn-raised btn-xs btn-secondary" (click)="selectClient(client)">Edit</button>
-            <button type="button btn btn-raised btn-xs btn-danger" (click)="_clientActions.removeClient(client.id)">Remove</button>
+            <button type="button btn btn-raised btn-xs btn-danger" (click)="removeClient(client.id)">Remove</button>
           </td>
         </tr>
         </tbody>
