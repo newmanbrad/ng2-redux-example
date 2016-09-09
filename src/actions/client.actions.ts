@@ -17,7 +17,6 @@ constructor(
   private _client: ClientService) {}
 
   addClient = (client) => {
-    console.info('Adding client info:', client);
     return this._client.getNextClientId().then(clientId => {
       return this._ngRedux.dispatch({
         type: CLIENT_ADDED,
