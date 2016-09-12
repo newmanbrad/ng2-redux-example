@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { DevToolsExtension, NgRedux } from 'ng2-redux';
+import { Login }  from '../components/';
 
 import {
   IAppState,
@@ -19,6 +20,16 @@ const TEMPLATE = require('./app.template.html');
   styles: [ require('../styles/index.css').toString(), require('../styles/index.less').toString() ]
 })
 export class App {
+
+  /***
+   *  I am using the ViewChild decorator to
+   *  fire an Event on the the child Login component.
+   *  Then expose child methods privately to this component.
+   */
+
+  @ViewChild(Login)
+  private Login: Login;
+
   constructor(private _ngRedux: NgRedux<IAppState>,
               private _devTools: DevToolsExtension) {
 
@@ -32,4 +43,8 @@ export class App {
       tools ? [ ...enhancers, tools ] : enhancers);
   }
 
+  openLoginModal(event) {
+    // Fire child event
+    this.Login.openLoginModal();
+  }
 };

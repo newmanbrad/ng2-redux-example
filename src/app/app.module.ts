@@ -4,28 +4,24 @@ import { BrowserModule } from '@angular/platform-browser';
 // redux goodness
 import { DevToolsExtension, NgRedux } from 'ng2-redux';
 import { NgReduxRouter } from 'ng2-redux-router';
-// import { provideReduxForms } from 'ng2-redux-form/source';
-
+// routing
 import {
   routing,
   appRoutingProviders
 } from './app.routing';
 import { App } from './app';
 import { Clients, Header } from '../components';
-
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 // bootstrap stuff
-import { AlertModule, DatepickerModule } from 'ng2-bootstrap/ng2-bootstrap';
-
+import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
 // modules
-import { ModalModule } from '../components/modal/modal.module';
-
+import { Login } from '../components/login/login.component';
+import { ModalModule } from 'ng2-modal';
 // Pages
 import {
   ClientsPage,
   HomePage
 } from '../pages';
-
 // services
 import { ClientService } from '../services/client';
 
@@ -36,9 +32,7 @@ import { ClientService } from '../services/client';
     routing,
     CommonModule,
     ReactiveFormsModule,
-    FormsModule,
-    AlertModule,
-    DatepickerModule,
+    Ng2BootstrapModule,
     ModalModule
   ],
   declarations: [
@@ -48,7 +42,8 @@ import { ClientService } from '../services/client';
     HomePage,
     // components
     Clients,
-    Header
+    Header,
+    Login
   ],
   bootstrap: [
     App

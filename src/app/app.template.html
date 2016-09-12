@@ -1,6 +1,8 @@
-<header-component></header-component>
+<header-component (openLogin)="openLoginModal($event)">></header-component>
 
 <div class="container-fluid">
   <!-- Routed views go here -->
   <router-outlet></router-outlet>
 </div>
+
+<login></login>

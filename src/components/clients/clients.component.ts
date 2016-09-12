@@ -14,7 +14,7 @@ import { Observable } from 'rxjs';
 import { IAppState, IClients, IClient } from '../../store';
 
 // decorator constants
-const TEMPLATE = require('./clients.component.html');
+const TEMPLATE = require('./clients.template.html');
 @Component({
   selector: 'client-component',
   template: TEMPLATE,
