@@ -3,13 +3,12 @@
   "version": "0.0.1",
   "author": "Brad Newman <bradjnewman@gmail.com>",
   "description": "Example application using NG2, Redux, Webpack and more to come.",
-  "repository" :
-  { "type" : "git"
-  , "url" : "https://github.com/newmanbrad/ng2-redux-example"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/newmanbrad/ng2-redux-example"
   },
   "engines": {
     "node": "4.4.4"
-
   },
   "scripts": {
     "clean": "npm cache clean && rimraf node_modules doc typings coverage dist",
@@ -129,6 +128,7 @@
     "ts-helpers": "^1.1.1",
     "tslint": "^3.3.0",
     "tslint-loader": "^2.1.0",
+    "typed-immutable-record": "0.0.5",
     "typescript": "^1.8.10",
     "typings": "^1.0.4",
     "url-loader": "^0.5.7",

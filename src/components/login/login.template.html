@@ -1,11 +1,27 @@
 <modal #loginModal>
-    <modal-header>
-        <h1>Login</h1>
-    </modal-header>
-    <modal-content>
-        Content Here
-    </modal-content>
-    <modal-footer>
-        <button class="btn btn-primary" (click)="loginModal.close()">close</button>
-    </modal-footer>
+  <modal-header>
+    <h1>Login</h1>
+  </modal-header>
+  <modal-content>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-horizontal">
+      <div class="form-group">
+        <label for="inputEmail" class="col-md-2 control-label">Email</label>
+
+        <div class="col-md-10">
+          <input type="email" class="form-control" id="inputEmail" placeholder="Email" formControlName="email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputPassword" class="col-md-2 control-label">Password</label>
+
+        <div class="col-md-10">
+          <input type="password" class="form-control" id="inputPassword" placeholder="Password" formControlName="password">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-sm pull-right" [disabled]="!loginForm.valid">Submit</button>
+      <button type="button" class="btn btn-secondary btn-sm pull-right" (click)="loginModal.close()">Cancel</button>
+    </form>
+  </modal-content>
+  <modal-footer>
+  </modal-footer>
 </modal>

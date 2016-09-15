@@ -1,7 +1,6 @@
 import {
     CLIENT_ADDED,
     CLIENT_DELETED,
-    CLIENT_UPDATED,
     UPDATE_CLIENT
 } from '../constants';
 

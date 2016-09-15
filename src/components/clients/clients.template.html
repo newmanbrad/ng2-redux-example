@@ -3,7 +3,7 @@
     <div class="well bs-component">
       <legend>{{ formTitle}} Client</legend>
       <!--- model driven form --->
-      <form [formGroup]="clientForm" (ngSubmit)="onSubmit(clientForm)" >
+      <form [formGroup]="clientForm" (ngSubmit)="onSubmit()" >
         <input type="hidden" name="id" formControlName="id">
         <div class="form-group">
           <input type="input" class="form-control" name="company" id="companyName" placeholder="Company Name" formControlName="company">
