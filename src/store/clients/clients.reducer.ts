@@ -1,5 +1,4 @@
-// import { List, Record, fromJS, Map } from 'immutable';
-import { IClients, IClient, ClientRecord } from './clients.types';
+import { IClients } from './clients.types';
 import { INITIAL_STATE } from './clients.initial-state';
 
 import {
