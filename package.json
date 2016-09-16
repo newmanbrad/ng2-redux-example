@@ -10,6 +10,11 @@
   "engines": {
     "node": "4.4.4"
   },
+  "keywords": [
+    "angular 2",
+    "redux",
+    "typescript"
+  ],
   "scripts": {
     "clean": "npm cache clean && rimraf node_modules doc typings coverage dist",
     "clean:dist": "rimraf dist",
