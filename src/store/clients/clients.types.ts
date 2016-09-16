@@ -1,4 +1,4 @@
-import { List, Record, Map } from 'immutable';
+import { List, Record } from 'immutable';
 
 export interface IClient {
   id: number;

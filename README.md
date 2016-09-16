@@ -20,7 +20,7 @@ Includes:
 npm install npm run start
 ```
 
-Install Redux Devtools from Chrome. Can be found here: https://chrome.google.com/webstore/detail/redux-devtools/
+Install Redux Devtools from Chrome. Can be found here: https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en
 
 1. After installing and running you can find the application here: http://localhost:8080/clients
 2. Open the Chrome console and select the Redux tab to use time travel debugging.

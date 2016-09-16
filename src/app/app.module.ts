@@ -24,7 +24,7 @@ import {
 } from '../pages';
 // services
 import { ClientService } from '../services/client';
-
+import { LoginService } from '../services/login';
 
 @NgModule({
   imports: [
@@ -53,7 +53,8 @@ import { ClientService } from '../services/client';
     NgRedux,
     NgReduxRouter,
     appRoutingProviders,
-    ClientService
+    ClientService,
+    LoginService
   ]
 })
 export class AppModule { }
