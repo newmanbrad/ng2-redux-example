@@ -14,10 +14,8 @@ export function clientReducer(state: IClients = INITIAL_STATE, action): IClients
 
   switch (action.type) {
     case CLIENT_ADDED:
-      // todo: this is a mutation of the current state which is wrong. Replace this without mutating state.
       return state.push(action.payload);
     case CLIENT_DELETED:
-      // todo: this is a mutation of the current state which is wrong. Replace this without mutating state.
       return state.filter(n => n.id !== action.payload.id) as IClients;
     case UPDATE_CLIENT:
       return state.map(client =>
