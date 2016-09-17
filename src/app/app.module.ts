@@ -13,7 +13,7 @@ import { App } from './app';
 import { Clients, Header } from '../components';
 import { ReactiveFormsModule } from '@angular/forms';
 // bootstrap stuff
-import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
+
 // modules
 import { Login } from '../components/login/login.component';
 import { ModalModule } from 'ng2-modal';
@@ -32,7 +32,6 @@ import { LoginService } from '../services/login';
     routing,
     CommonModule,
     ReactiveFormsModule,
-    Ng2BootstrapModule,
     ModalModule
   ],
   declarations: [
