@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import * as clients from './clients';
 import * as session from './session';
+import { routerReducer } from 'ng2-redux-router';
 
 /*
  * This is where we 'assemble' the full store out of its modules.
@@ -13,7 +14,8 @@ export interface IAppState {
 
 export const rootReducer = combineReducers<IAppState>({
   clients: clients.clientReducer,
-  session: session.sessionReducer
+  session: session.sessionReducer,
+  router: routerReducer
 });
 
 export function deimmutify(state: IAppState): Object {

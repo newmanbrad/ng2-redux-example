@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { DevToolsExtension, NgRedux } from 'ng2-redux';
 import { Login }  from '../components/';
+import { NgReduxRouter } from 'ng2-redux-router';
 
 import {
   IAppState,
@@ -31,7 +32,8 @@ export class App {
   private Login: Login;
 
   constructor(private _ngRedux: NgRedux<IAppState>,
-              private _devTools: DevToolsExtension) {
+              private _devTools: DevToolsExtension,
+              private _ngReduxRouter: NgReduxRouter) {
 
     const tools = _devTools.enhancer({
       deserializeState: reimmutify,
@@ -41,6 +43,8 @@ export class App {
       {},
       middleware,
       tools ? [ ...enhancers, tools ] : enhancers);
+
+    _ngReduxRouter.initialize(/* args */);
   }
 
   openLoginModal(event) {

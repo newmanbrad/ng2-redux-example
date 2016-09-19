@@ -5,6 +5,7 @@ const localStorage = require('store');
 export class LoginService {
     // todo: build real api interaction here.
     login(credentials): Promise<any> {
+      // console.log(credentials);
         return new Promise((resolve, reject) => {
         let temp = {
             token: 1234,
@@ -18,7 +19,7 @@ export class LoginService {
             isLoading: false
         };
 
-        localStorage.set('session', temp);
+        // localStorage.set('skill-mapper', temp);
 
         resolve(temp);
       });
