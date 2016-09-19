@@ -20,7 +20,8 @@ import { ModalModule } from 'ng2-modal';
 // Pages
 import {
   ClientsPage,
-  HomePage
+  HomePage,
+  ConsultantsPage
 } from '../pages';
 // services
 import { ClientService } from '../services/client';
@@ -39,6 +40,7 @@ import { LoginService } from '../services/login';
     // pages
     ClientsPage,
     HomePage,
+    ConsultantsPage,
     // components
     Clients,
     Header,

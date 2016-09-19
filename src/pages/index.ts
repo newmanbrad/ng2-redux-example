@@ -1,4 +1,5 @@
 import { ClientsPage } from './clients.page';
 import { HomePage } from './home.page';
+import { ConsultantsPage } from './consultants.page';
 
-export { ClientsPage, HomePage };
+export { ConsultantsPage, ClientsPage, HomePage };
