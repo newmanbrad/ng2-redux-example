@@ -12,7 +12,7 @@ Includes:
 * Compatibility with the existing Redux devtools Chrome extension
 * The ability to access slices of store state as Observables
 * Integration with Less / Bootstrap / Bootstrap Material Design 
-* Angular 2 RC 5
+* Angular 2 Final
 
 ## Installation
 

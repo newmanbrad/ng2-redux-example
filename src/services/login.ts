@@ -4,8 +4,8 @@ const localStorage = require('store');
 @Injectable()
 export class LoginService {
     // todo: build real api interaction here.
-    login(credentials): Promise<any> {
-      // console.log(credentials);
+    public login(credintials: Object): Promise<any> {
+      console.log(credintials);
         return new Promise((resolve, reject) => {
         let temp = {
             token: 1234,
