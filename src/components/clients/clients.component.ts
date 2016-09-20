@@ -11,7 +11,7 @@ import {
     FormBuilder
 } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { IAppState, IClients, IClient } from '../../store';
+import { IAppState, IClients } from '../../store';
 
 // decorator constants
 const TEMPLATE = require('./clients.template.html');
