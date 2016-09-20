@@ -2,12 +2,15 @@ const persistState = require('redux-localstorage');
 const createLogger = require( 'redux-logger');
 import { IAppState, rootReducer, deimmutify, reimmutify } from './store';
 import { IClients, IClient } from './clients';
+import { IConsultants, IConsultant } from './consultant';
 
 export {
   IAppState,
   rootReducer,
   IClients,
   IClient,
+  IConsultants,
+  IConsultant,
   reimmutify,
 };
 
